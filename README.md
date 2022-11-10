@@ -51,7 +51,9 @@ Users and owner can access:
 Home Page.
 
 
+
 owner:
+
 
 create an account or log in.
 
@@ -60,7 +62,9 @@ Add new location.
 manage all reservations.
 
 
+
 Users:
+
 
 Create an account or log in .
 
