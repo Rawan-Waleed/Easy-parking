@@ -1,5 +1,5 @@
 # Easy-parking
-# Description: A website can reserve parking. This Parking reservation Website has two main users, the user who wants to reserve the parking and responsible for the location of the place.
+# Description: A website can reserve parking. This Parking reservation has two main users, the user who wants to reserve the parking and responsible for the location of the place.
 ________________________________________
 
 Features List :
