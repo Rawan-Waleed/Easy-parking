@@ -1,10 +1,12 @@
 # Easy-parking
-Description: A website can reserve parking. This Parking reservation has two main users, the user who wants to reserve the parking and responsible for the location of the place.
+# Description: A website can reserve parking. This Parking reservation has two main users, the user who wants to reserve the parking and responsible for the location of the place.
+________________________________________
 Features List :
 •	Find the Perfect Parking Spot.
 •	Time-saving.
 ________________________________________
-Usage :
+User Story:
+
 User :
 •	As a new user I want to register with my email, first name, last name, phone number, gender, city, and create my password. so I can use the website.
 •	As a user, I want to log in by email and password. so I can use the website.
@@ -21,3 +23,7 @@ Owner of the place :
 •	As an owner, I want to browse all reservations.
 •	As an owner, I want to delete one or all the reservations.
 •	As an owner, I want to edit the reservations.
+
+
+Wireframe link :
+https://www.figma.com/file/cHjeRJg38fzHYlnhh7BYdR/Untitled?node-id=0%3A1
