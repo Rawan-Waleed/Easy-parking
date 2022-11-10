@@ -52,6 +52,7 @@ Home Page.
 
 
 
+
 owner:
 
 
@@ -63,7 +64,9 @@ manage all reservations.
 
 
 
+
 Users:
+
 
 
 Create an account or log in .
