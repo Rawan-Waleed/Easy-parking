@@ -9,7 +9,6 @@ Features List :
 •	Time-saving.
 ________________________________________
 
-User Story:
 
 User :
 
@@ -41,6 +40,35 @@ Owner of the place :
 •	As an owner, I want to delete one or all the reservations.
 
 •	As an owner, I want to edit the reservations.
+
+________________________________________
+
+Pages:
+
+
+Users and owner can access:
+
+Home Page.
+
+
+owner:
+
+create an account or log in.
+
+Add new location.
+
+manage all reservations.
+
+
+Users:
+
+Create an account or log in .
+
+Choose place.
+
+Make a reservation.
+
+Edit or delete reservation.
 
 
 Wireframe link :
