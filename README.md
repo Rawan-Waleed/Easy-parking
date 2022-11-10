@@ -71,6 +71,8 @@ Make a reservation.
 Edit or delete reservation.
 
 
+________________________________________
+
 Wireframe link :
 
 https://www.figma.com/file/cHjeRJg38fzHYlnhh7BYdR/Untitled?node-id=0%3A1
