@@ -1,11 +1,35 @@
 {% extends 'user/user_base.html' %}
+
 {% load static %}
 
-
+{% block title %} All Places {% endblock %}
+<link rel ="stylesheet" href="{% static 'styles.css' %}">
   {% block content %}
-
   
- 
+  <table class="table" >
+    
+    <thead>
+      <tr>
+        <th scope="col">Place name</th>
+        <th scope="col">Place Location</th>
+    
+      </tr>
+    </thead>
+    <tbody>
+      {% for places in place %}
+      <tr>
+          <th scope="row"><a href="">{{ places.address }}</a></th>
+          <td>{{ places.place_name }}</td>
+          <td>
+
+          </td>
+      </tr>
+      {% endfor %}
+
+  </tbody>
+  </table>
+  
+
   {% endblock %}
 
 

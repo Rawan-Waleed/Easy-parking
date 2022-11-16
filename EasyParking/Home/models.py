@@ -5,13 +5,14 @@ from django.contrib.auth.models import User
 
 class Place(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    place_name = models.CharField(max_length=2048)
 
     city_choose = models.TextChoices("city", ["Riyadh", "Jeddah", "Abha" , "Makkah" ,"Al-Medina" , "Al-Dammam"])
     city  = models.CharField(max_length=64, choices = city_choose.choices , default=city_choose.Riyadh)
 
 class Add(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    place_name = models.CharField(max_length=2048 , default=None)
+    address = models.URLField(null=False , default="https://www.google.com/maps/")
     Price = models.CharField(max_length=2048)
     number_parking = models.IntegerField()
 

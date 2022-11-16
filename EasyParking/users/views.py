@@ -4,6 +4,8 @@ from .models import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from .models import Profile
+from Home.models import Add
+
 
 # Create your views here.
 
@@ -25,7 +27,7 @@ def new_user(request : HttpRequest):
      user = User.objects.create_user(username= request.POST["email"] , email = request.POST["email"] , first_name = request.POST["first_name"], last_name = request.POST["last_name"] , password=request.POST["password"])
      user.save()
     
-     profile = Profile(user=user, phone_number = request.POST["phone_number"])
+     profile = Profile(user=user, phone_number = request.POST["phone_number"] , is_owner = request.POST["is_owner"])
      profile.save()
 
      return redirect ("users:all_places")
@@ -39,7 +41,9 @@ def logOut(request : HttpRequest):
 
 
 def all_places(request : HttpRequest):
-    return render(request , "user/all_places.html")
+    places = Add.objects.all()
+    return render(request , "user/all_places.html" , {"place" : places})
+
 
 def information_and_reserve(request : HttpRequest):
     return render(request , "user/information_and_reserve.html")
@@ -53,7 +57,12 @@ def user_reserve_information(request : HttpRequest ):
 
 
 def add_place(request : HttpRequest):
-    return render(request , "user/add_place.html")
+    if request.method == "POST":
+      new_place = Add(place_name= request.POST["place_name"] , address = request.POST["address"] , Price = request.POST["Price"], number_parking = request.POST["number_parking"] , days =request.POST["days"], open_time =request.POST["open_time"], close_time =request.POST["close_time"])
+      new_place.save()
+      return redirect ("users:owner_manage")
+
+    return render(request , "user/add_place.html" )
     
 
 def owner_manage(request : HttpRequest):
