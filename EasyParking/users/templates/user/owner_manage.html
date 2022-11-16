@@ -1,4 +1,4 @@
-{% extends 'user/owner_base.html' %}
+{% extends 'Base/Home.html' %}
 {% block title %} Manage {% endblock %}
 
 
@@ -9,7 +9,7 @@
         <th scope="col">Name</th>
         <th scope="col">Email</th>
         <th scope="col">Phone Number</th>
-        <th scope="col">Date</th>
+        <th scope="col">Day</th>
         <th scope="col">Time</th>
         <th scope="col">Number of Parking</th>
         <th scope="col">Edit</th>
@@ -17,27 +17,22 @@
     </thead>
     <tbody>
       <tr>
-        
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
-        <td><button type="button" class="btn btn-outline-secondary">Delete</button></td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
-
+        <tbody>
+          {% for all_reservation in users_reservation %}
+          <tr>
+              <th scope="row"><a href="">{{ all_reservation.user.first_name }}</a></th>
+              <td>{{ all_reservation.user.username }}</td>
+              <td>{{ all_reservation.phone_number }}</td>
+              <td>{{ all_reservation.day}}</td>
+              <td>{{ all_reservation.time }}</td>
+              <td>{{ all_reservation.parking_reserve }}</td>
+              <td><button type="button" class="btn btn-outline-secondary"> <a href="{% url 'users:delete_reservation' all_reservation.user.id  %}"> Delete </button></td>
+    
+              </td>
+          </tr>
+          {% endfor %}
+    
+      </tbody>
+      </table>
+      
 {% endblock %}

@@ -1,0 +1,107 @@
+{% extends 'Base/Home.html' %}
+{% load static %}
+{% block title %} Reserve Information {% endblock %}
+
+
+{% block content %}
+<section id="about-section" class="pt-5 pb-5">
+	<div class="img">
+<img src="{% static 'image/pic1.jpg' %}" width="1000" height="600"  alt="" ></div>
+<div class="container ">
+	<div class="red">
+	<div class="row">
+		<div class="col-lg-6 align-items-center justify-content-left d-flex mb-5 mb-lg-0">
+			<div class="blockabout">
+				<div class="blockabout-inner text-center text-sm-start">
+					<div id="formContent" >
+                        {% for reserve in user_reserve %}
+
+             {{ places.address }}
+            {{ places.place_name }}
+    
+      {% endfor %}
+                        <div class="col">
+                            name : {{reserve.first_name}} 
+                        </div>
+                        <div class="col">
+                            
+                            Day and Time: {{reserve.day}} , {{reserve.start_time}} to {{reserve.end_time}}
+
+                        </div>
+                        <div class="col">
+                           
+                            Place: {{reserve.place_name}}
+
+                        </div>
+                        <div class="col">
+
+                            Phone Number:{{reserve.phone_number}}
+                            
+                        </div>
+                        <div class="col">
+
+                            Number of Parking:{{reserve.parking_reserve}}
+                        </div>
+					
+				</div>
+			</div>
+		   
+		</div>
+		
+	</div>
+	
+</div>
+</section>
+	</div>
+
+  </body>
+<style>
+#about-section {
+background: rgba(154, 166, 160, 0.1);
+
+border-radius:30px;
+}
+
+.blockabout {
+padding: 29px;
+background: rgba(255, 255, 255, 0.645);
+width: 900px;
+height: 600;
+position: absolute;
+margin-top: -550px;
+margin-left: 90px;
+}
+
+.blockabout-inner {
+padding: 30px;
+border: 1px solid rgba(32, 33, 36, 0.1);
+}
+
+.sosmed-horizontal a i {
+border: 1px solid #070707;
+border-radius: 50%;
+color: #070707;
+display: inline-block;
+height: 30px;
+width: 40px;
+line-height: 30px;
+margin: auto 3px;
+font-size: 15px;
+text-align: center;
+transition: all 0.3s;
+}
+
+.rey-btn {
+border: 2px solid #070707;
+padding: 10px 40px;
+text-transform: uppercase;
+letter-spacing: 2px;
+font-size: 13px;
+font-weight: 700;
+border-radius: 50px;
+transition: all 0.3s;
+}
+
+</style>
+  
+{% endblock %}

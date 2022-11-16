@@ -5,19 +5,26 @@ from django.contrib.auth.models import User
 
 class Place(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    city  = models.CharField(max_length=64)
 
-    city_choose = models.TextChoices("city", ["Riyadh", "Jeddah", "Abha" , "Makkah" ,"Al-Medina" , "Al-Dammam"])
-    city  = models.CharField(max_length=64, choices = city_choose.choices , default=city_choose.Riyadh)
-
-class Add(models.Model):
+class Add_Place(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    place_name = models.CharField(max_length=2048 , default=None)
+    place_name = models.CharField(max_length=2048 , null=True)
     address = models.URLField(null=False , default="https://www.google.com/maps/")
     Price = models.CharField(max_length=2048)
     number_parking = models.IntegerField()
 
-    opening_days = models.TextChoices("days", ["Saturday", "Sunday", "Monday" , "Tuesday" ,"Al-Wednesday" , "Al-Thursday" , "Friday"])
-    days = models.CharField(max_length=64, choices = opening_days.choices , default=opening_days.Saturday)
+    days = models.CharField(max_length=64)
 
     open_time = models.TimeField()
     close_time = models.TimeField()
+
+class User_Reservation(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    parking_reserve = models.CharField(max_length=64 , null=True)
+    hours = models.CharField(max_length=64  , null=True)
+    day = models.CharField(max_length=64 , null=True)
+    start_time = models.TimeField( null=True)
+    end_time = models.TimeField( null=True)
+
+

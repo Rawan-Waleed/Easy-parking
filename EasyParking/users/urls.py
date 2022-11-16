@@ -11,6 +11,8 @@ urlpatterns = [
     path("info_reserve/" , views.information_and_reserve , name="information_and_reserve"),
     path("logOut/" , views.logOut , name= "logOut"),
     path("add_place" , views.add_place , name="add_place"),
-    path("manage/" , views.owner_manage , name="owner_manage")
+    path("manage/" , views.owner_manage , name="owner_manage"),
+    path("success/<reserve_id>/" , views.success_resservation , name="success_resservation"),
+    path("delete/<reserve_id>/" , views.delete_reservation , name="delete_reservation")
    
    ]

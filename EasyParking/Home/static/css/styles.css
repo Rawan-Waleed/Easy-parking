@@ -297,3 +297,53 @@
     border-radius: 50px;
     transition: all 0.3s;
 }
+
+#about-section {
+  background: rgba(154, 166, 160, 0.1);
+  
+  border-radius:30px;
+  }
+  
+  .blockabout {
+  padding: 29px;
+  background: white;
+  width: 500px;
+  position: absolute;
+  margin-top: -550px;
+  margin-left: 50px;
+  }
+  
+  .blockabout-inner {
+  padding: 30px;
+  border: 1px solid rgba(32, 33, 36, 0.1);
+  }
+  
+  .sosmed-horizontal a i {
+  border: 1px solid #070707;
+  border-radius: 50%;
+  color: #070707;
+  display: inline-block;
+  height: 30px;
+  width: 40px;
+  line-height: 30px;
+  margin: auto 3px;
+  font-size: 15px;
+  text-align: center;
+  transition: all 0.3s;
+  }
+  
+  .rey-btn {
+  border: 2px solid #070707;
+  padding: 10px 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 50px;
+  transition: all 0.3s;
+  }
+  .photo{
+  
+  margin-right: 10%;
+  
+  }

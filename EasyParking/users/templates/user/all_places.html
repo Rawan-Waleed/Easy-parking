@@ -1,13 +1,25 @@
-{% extends 'user/user_base.html' %}
+{% extends 'Base/Home.html' %}
 
 {% load static %}
 
 {% block title %} All Places {% endblock %}
 <link rel ="stylesheet" href="{% static 'styles.css' %}">
   {% block content %}
-  
-  <table class="table" >
-    
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+<section id="about-section" class="pt-5 pb-5">
+<div class="container ">
+	<div class="red">
+	<div class="row">
+		<div class="col-lg-6 align-items-center justify-content-left d-flex mb-5 mb-lg-0">
+			<div class="blockabout">
+				<div class="blockabout-inner text-center text-sm-start">
+					<div id="formContent" >
+					
+						  <div class="form-row">
+					
+  <table class="table">
     <thead>
       <tr>
         <th scope="col">Place name</th>
@@ -18,7 +30,7 @@
     <tbody>
       {% for places in place %}
       <tr>
-          <th scope="row"><a href="">{{ places.address }}</a></th>
+          <th scope="row"><a href="{% url 'users:information_and_reserve'%}">{{ places.address }}</a></th>
           <td>{{ places.place_name }}</td>
           <td>
 
@@ -29,6 +41,18 @@
   </tbody>
   </table>
   
+							
+						  
+					
+				</div>
+			</div>
+		   
+		</div>
+		
+	</div>
+	
+</div>
+</section>
 
   {% endblock %}
 
