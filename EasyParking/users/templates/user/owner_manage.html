@@ -3,6 +3,7 @@
 
 
 {% block content %}
+<h2 style="text-align:center ; font-family: Verdana, Geneva, Tahoma, sans-serif;"> All Information About users Reservation</h2> <br>
 <table class="table">
     <thead>
       <tr>
@@ -10,9 +11,8 @@
         <th scope="col">Email</th>
         <th scope="col">Phone Number</th>
         <th scope="col">Day</th>
-        <th scope="col">Time</th>
+        <th scope="col">Time </th>
         <th scope="col">Number of Parking</th>
-        <th scope="col">Edit</th>
       </tr>
     </thead>
     <tbody>
@@ -22,11 +22,10 @@
           <tr>
               <th scope="row"><a href="">{{ all_reservation.user.first_name }}</a></th>
               <td>{{ all_reservation.user.username }}</td>
-              <td>{{ all_reservation.phone_number }}</td>
+              <td>{{ all_reservation.user.profile.phone_number }}</td>
               <td>{{ all_reservation.day}}</td>
-              <td>{{ all_reservation.time }}</td>
+              <td>From: {{ all_reservation.start_time  }} To: {{ all_reservation.end_time  }}</td>
               <td>{{ all_reservation.parking_reserve }}</td>
-              <td><button type="button" class="btn btn-outline-secondary"> <a href="{% url 'users:delete_reservation' all_reservation.user.id  %}"> Delete </button></td>
     
               </td>
           </tr>
@@ -34,5 +33,13 @@
     
       </tbody>
       </table>
-      
+      <style type="text/css">
+        .table {
+            margin: 0 auto;
+            width: 90%;
+            margin-left: 70px;
+            text-align: center;
+            border-style:double;
+        }
+        </style><br><br><br><br><br><br>
 {% endblock %}

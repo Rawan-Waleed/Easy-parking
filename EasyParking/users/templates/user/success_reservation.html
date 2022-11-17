@@ -6,7 +6,7 @@
 {% block content %}
 <section id="about-section" class="pt-5 pb-5">
 	<div class="img">
-<img src="{% static 'image/pic1.jpg' %}" width="1000" height="600"  alt="" ></div>
+<img src="{% static 'image/pic13.png' %}" width="440" height="400"  alt="" ></div>
 <div class="container ">
 	<div class="red">
 	<div class="row">
@@ -14,35 +14,14 @@
 			<div class="blockabout">
 				<div class="blockabout-inner text-center text-sm-start">
 					<div id="formContent" >
-                        {% for reserve in user_reserve %}
-
-             {{ places.address }}
-            {{ places.place_name }}
-    
-      {% endfor %}
+                        {% for reserve in success1 %}
                         <div class="col">
-                            name : {{reserve.first_name}} 
+                            name : {{reserve.user.first_name}} <br>
+                            Day and Time: {{reserve.day}} , {{reserve.start_time}} to {{reserve.end_time}}<br>
+                            Phone Number: {{reserve.user.profile.phone_number}}<br>
+                            Number of Parking:{{reserve.parking_reserve}}<br>
                         </div>
-                        <div class="col">
-                            
-                            Day and Time: {{reserve.day}} , {{reserve.start_time}} to {{reserve.end_time}}
-
-                        </div>
-                        <div class="col">
-                           
-                            Place: {{reserve.place_name}}
-
-                        </div>
-                        <div class="col">
-
-                            Phone Number:{{reserve.phone_number}}
-                            
-                        </div>
-                        <div class="col">
-
-                            Number of Parking:{{reserve.parking_reserve}}
-                        </div>
-					
+					{% endfor %}
 				</div>
 			</div>
 		   
@@ -102,6 +81,9 @@ border-radius: 50px;
 transition: all 0.3s;
 }
 
+.img{
+    margin-left: 53%;
+}
 </style>
   
 {% endblock %}

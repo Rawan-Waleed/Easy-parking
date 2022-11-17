@@ -18,32 +18,22 @@
 					<div id="formContent" >
 					
 						  <div class="form-row">
-					
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Place name</th>
-        <th scope="col">Place Location</th>
-    
-      </tr>
-    </thead>
-    <tbody>
-      {% for places in place %}
-      <tr>
-          <th scope="row"><a href="{% url 'users:information_and_reserve'%}">{{ places.address }}</a></th>
-          <td>{{ places.place_name }}</td>
-          <td>
-
-          </td>
-      </tr>
-      {% endfor %}
-
-  </tbody>
-  </table>
-  
-							
-						  
-					
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Place Name</th>
+                      <th scope="col">Location</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for places in place %}
+                    <tr>
+                        <td><a href="{% url 'users:information_and_reserve' user.id%}">{{ places.place_name }} </a></td>
+                        <td><a href="{% url 'users:information_and_reserve' user.adderss.id}">{{ places.address }}</a></td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
 				</div>
 			</div>
 		   
@@ -52,7 +42,18 @@
 	</div>
 	
 </div>
-</section>
+  </div>
+  </div></div>
+</section><br><br><br>
+<style type="text/css">
+  .table {
+      margin: 0 auto;
+      width: 120%;
+      margin-left: 200px;
+      text-align: center;
+      border-style:double;
+  }
+  </style>
 
   {% endblock %}
 

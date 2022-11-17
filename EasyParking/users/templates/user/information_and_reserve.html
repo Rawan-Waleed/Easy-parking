@@ -2,85 +2,35 @@
 {% load static %}
 {% block title %} reserve {% endblock %}
 
-<link rel ="stylesheet" href="{% static 'styles.css' %}">
-
 {% block content %}
-
 	<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-	  <div class="col-md-5 p-lg-5 mx-auto my-5">
+		<h3 style="font-family:Arial, Helvetica, sans-serif; text-align: center;"><div class="container " style="background-color:rgba(250, 253, 251, 0.719); border-radius: 9px; ">All Information About the place:</h3></div>
 
-	  </div>
-	  <div class="product-device shadow-sm d-none d-md-block"></div>
-	  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-	</div>
-  
-   
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 	<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
 <section id="about-section" class="pt-5 pb-5">
 	<div class="img">
-<img src="{% static 'image/pic1.jpg' %}" width="1000" height="600"  alt="" ></div>
+<img src="{% static 'image/pic2.jpg' %}" width="1000" height="600"  alt="" ></div>
 <div class="container ">
 	<div class="red">
 	<div class="row">
 		<div class="col-lg-6 align-items-center justify-content-left d-flex mb-5 mb-lg-0">
-			<div class="blockabout">
-				<div class="blockabout-inner text-center text-sm-start">
-					<div id="formContent" >
-
-						<!-- Login Form -->
-						<form ction="{% url 'users:information_and_reserve' %}" method="POST" class="container">
-						  {% csrf_token %}
-					
-						  <div class="form-row">
+			<div class="blockabout1">
 				
-					
-							<div class="col">
-							  <label for="">Please entre the number of parking you want</label>
-							  <input type="text" class="form-control" name="parking_reserve"required>
-							</div>
-						  </div>
-					
-						  <div class="form-row">
-					
-							<div class="col">
-							  <label for="">How may hours</label>
-							  <input type="" class="form-control"  name="hours"required>
-							</div><br>
-					
-							<div class="col">
-							<select class="form-select" aria-label="Default select example" name="day">
-								<option disabled selected>Please select day you want</option>
-								<option>Saturday</option>
-								<option>Sunday</option>
-								<option>Monday</option>
-								<option>Tuesday</option>
-								<option>Wednesday</option>
-								<option>Thursday</option>
-								<option>Friday</option>
-							</select>
-						</div><br>
-						  <div class="form-row">
-			
-							<div class="col">
-								<label for="Times">Please select time you want</label> <br>From:
-								<input type="time" class="form-control"  name="start_time" required> 
-							  </div>
-							  
-							  <div class="col" >
-								<label for="Times"></label> <br>To :
-								<input type="time" class="form-control"  name="end_time" required>
-							  </div><br>
-			
-					
-						  <br>
-						  <div class="col-12">
-							<button type="submit" class="btn btn-outline-dark">Reserve</button>
-						  </div><br>
+				<div class="blockabout-inner text-center text-sm-start">
+					<div id="formContent" style="text-align:center;">
 
-						</form>
-						  
-					
+						{% for information in place_info %}
+						<strong>{{information.place_name}} </strong><br>
+						Price the Parking per hour: {{information.Price}} SAR <br>
+						Opening Days: {{information.days}} <br>
+						Open From: {{information.open_time}}<br>
+						To: {{information.close_time}}<br>
+      <tr>
+    
+      </tr>
+      {% endfor %}
+						
 				</div>
 			</div>
 		   
@@ -90,9 +40,83 @@
 	
 </div>
 </section>
-	</div>
 
+	  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+  <section id="about-section" class="pt-5 pb-5">
+	  <div class="img">
+  <img src="{% static 'image/pic11.jpg' %}" width="1000" height="600"  alt="" ></div>
+  <div class="container ">
+	  <div class="red">
+	  <div class="row">
+		  <div class="col-lg-6 align-items-center justify-content-left d-flex mb-5 mb-lg-0">
+			  <div class="blockabout">
+				  
+				  <div class="blockabout-inner text-center text-sm-start">
+					  <div id="formContent" style="text-align:center;">
+  
+						  
+						  <form ction="{% url 'users:user_reserve_information' user.id %}" method="POST" class="container">
+							{% csrf_token %}
+					  
+							<div class="form-row">
+				  
+					  
+							  <div class="col">
+								<label for="">Please entre the number of parking you want</label>
+								<input type="text" class="form-control" name="parking_reserve"required>
+							  </div>
+							</div>
+					  
+							<div class="form-row">
+					  
+							  <div class="col">
+								<label for="">How may hours</label>
+								<input type="" class="form-control"  name="hours"required>
+							  </div><br>
+					  
+							  <div class="col">
+							  <select class="form-select" aria-label="Default select example" name="day">
+								  <option disabled selected>Please select day you want</option>
+								  <option>Saturday</option>
+								  <option>Sunday</option>
+								  <option>Monday</option>
+								  <option>Tuesday</option>
+								  <option>Wednesday</option>
+								  <option>Thursday</option>
+								  <option>Friday</option>
+							  </select>
+						  </div><br>
+							<div class="form-row">
+			  
+							  <div class="col">
+								  <label for="Times">Please select time you want</label> <br>From:
+								  <input type="time" class="form-control"  name="start_time" required> 
+								</div>
+								
+								<div class="col" >
+								  <label for="Times"></label> <br>To :
+								  <input type="time" class="form-control"  name="end_time" required>
+								</div><br>
+			  
+
+							<div class="col-12">
+							  <button type="submit" class="btn btn-outline-dark">Reserve</button>
+							</div>
+						  </form>
+							
+					  
+				  </div>
+			  </div>
+			 
+		  </div>
+		  
+	  </div>
+	  
+  </div>
+  </section>
   </body>
+  <br><br><br><br><br>
 <style>
 #about-section {
 background: rgba(154, 166, 160, 0.1);
@@ -102,12 +126,22 @@ border-radius:30px;
 
 .blockabout {
 padding: 29px;
-background: rgba(255, 255, 255, 0.645);
-width: 900px;
-height: 600;
+background: rgba(255, 255, 255, 0.755);
+width: 750px;
+height: 520px;
 position: absolute;
 margin-top: -550px;
-margin-left: 90px;
+margin-left: 110px;
+align-content: center;
+}
+.blockabout1 {
+padding: 29px;
+background: rgba(255, 255, 255, 0.705);
+width: 800px;
+height: 600;
+position: absolute;
+margin-top: -600px;
+margin-left: 140px;
 }
 
 .blockabout-inner {
@@ -120,8 +154,8 @@ border: 1px solid #070707;
 border-radius: 50%;
 color: #070707;
 display: inline-block;
-height: 30px;
-width: 40px;
+height: 20px;
+width: 30px;
 line-height: 30px;
 margin: auto 3px;
 font-size: 15px;

@@ -7,15 +7,15 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-<div class="wrapper fadeInDown">
+<h3 style="font-family:Arial, Helvetica, sans-serif; text-align: center;"><div class="container " style="background-color:rgba(250, 253, 251, 0.719); border-radius: 9px; ">Sign In</h3></div>
+
+<div class="wrapper fadeInDown"style="background-color:#f7f8f6 ;">
   <div id="formContent">
-    <!-- Login Form -->
     
     <form action="{% url 'users:signIn' %}" method="POST"  class="container">
         {% csrf_token %}
         <br>
-        
-        <input type="email" class="form-control" id="floatingInput" placeholder="eamil" name="email" required><br><br>
+        <input type="email" class="form-control" id="floatingInput" placeholder="email" name="email" required><br><br>
         <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password"required><br><br>
         <button type="submit" class="btn btn-outline-success">Sign In</button>
         <br><br>
@@ -23,7 +23,7 @@
 
 
     </form>
-
+  </div>
 </div>
 <style>
 html {
@@ -64,7 +64,6 @@ html {
     width: 100%;
     min-height: 100%;
     padding: 20px;
-    background-color: #e3eed7b6;
   }
 
   
@@ -74,6 +73,7 @@ html {
     background: #fff;
     padding: 30px;
     width: 90%;
+    margin-top: -90px;
     max-width: 500px;
     position: relative;
     padding: 0px;
@@ -289,3 +289,4 @@ html {
   
 </style>
 {% endblock %}
+
